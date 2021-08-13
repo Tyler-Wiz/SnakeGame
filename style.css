@@ -1,21 +1,53 @@
 html, body {
     margin: 10px;
     padding: 10px;
+    font-size: 10px;
+}
+
+h1{
+    font-size: 3rem;
 }
 
 .grid {
-    width: 400px;
-    height: 400px;
-    border: 2px solid black;
+    width: 40rem;
+    height: 40rem;
+    border: 2px solid rgb(202, 194, 194);
     display: flex;
     flex-wrap: wrap;
 }
 
 .square{
-    width: 40px;
-    height: 40px;
+    width: 4rem;
+    height: 4rem;
 }
 
 .snake{
-    background-color: green;
+    background-color: rgb(28, 107, 28);
+    
+}
+
+button{
+    border: none;
+    padding: 1.3rem;
+    background-color: rgb(61, 99, 4);
+    color: white;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 6px;
+    font-weight: 700;
+}
+
+.scoreboard{
+    display: flex;
+}
+
+.scoreboard h2 {
+    font-size: 2rem;
+    margin-right: 3rem;
+}
+
+
+.apple {
+    background-image: url(/apple.png);
+    background-repeat: no-repeat;
 }
