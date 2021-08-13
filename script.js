@@ -2,6 +2,9 @@ const grid = document.querySelector('.grid')
 const startButton = document.querySelector('#start')
 const score = document.querySelector('#score')
 let squares = []
+let currentSnake = [3,2,1,0]
+let direction = 1
+let width = 10
 
 function createGrid(){
     for(let i=0; i < 100; i++){
@@ -10,8 +13,35 @@ function createGrid(){
         grid.appendChild(square)
         squares.push(square)
     }
-    console.log(squares)
 }
 
 createGrid()
 
+currentSnake.forEach(index => {
+    squares[index].classList.add('snake')
+})
+
+function move(){
+    let tail = currentSnake.pop()
+    squares[tail].classList.remove('snake')
+    let head = currentSnake.unshift(currentSnake[0] + direction)
+    squares[currentSnake[0]].classList.add('snake')
+}
+
+// setInterval(move, 1000)
+
+move()
+
+function control(e) {
+    if(e.key === 'ArrowDown'){
+       direction = +width
+    } else if(e.key === 'ArrowUp'){
+        direction = -width
+    } else if(e.key === 'ArrowLeft'){
+        direction = -1
+    } else if(e.key === 'ArrowRight'){
+        direction = +1
+}
+}
+
+document.addEventListener('keydown',control)
